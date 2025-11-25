@@ -48,7 +48,13 @@ public class Main{
         String my_name;
         my_name = scanner.nextLine(); // takes multiple words
         // next takes only one word
+        // nextInt for taking integer input
+        int my_age;
+        System.out.print("How old are you? ");
+        my_age = scanner.nextInt();
+
         System.out.println("My name is " + my_name);
+        System.out.println("I am " + my_age + " years old");
         scanner.close();
     }
 
