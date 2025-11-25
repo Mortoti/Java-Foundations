@@ -3,7 +3,7 @@
 
 ## 📅 Daily Entries
 
-### [Day 01] - Nov 25, 2025
+### [Day 01] - Nov 24, 2025
 **Topic:** Java Syntax, Printing & Data Types
 - **Key Concepts:**
     - **Structure:** Java is stricter than Python. Every program MUST be inside a `class`, and the entry point is always `public static void main`.
@@ -40,5 +40,56 @@
           // Boolean Variables
           boolean isStudent = true;
           System.out.println("It is " + isStudent + " that he is a student");
+      }
+  }
+  
+### [Day 02] - Nov 25, 2025
+**Topic:** Memory Management, Scanner Input & Reference Types
+- **Key Concepts:**
+    - **Memory Model:**
+        - **Primitives (int, char):** Stored directly in the **Stack**. (Fast, lower case types).
+        - **References (String, Scanner, Arrays):** The variable sits in the Stack, but it points to an Object in the **Heap**. (Slower, Capitalized types).
+    - **Scanner Setup:** Unlike Python's `input()`, Java requires a full setup:
+        1. Import it: `import java.util.Scanner;`
+        2. Create Object: `Scanner scanner = new Scanner(System.in);`
+        3. Close it: `scanner.close();` (To prevent memory leaks).
+    - **Input Methods:**
+        - `next()`: Reads a single word (stops at space).
+        - `nextLine()`: Reads the entire line (like C++ `getline`).
+        - `nextInt()`: Reads an integer.
+
+- **💡 "Aha!" Moments:**
+    - **Syntax Highlighting:** IntelliJ colors Primitives (orange/blue) differently from Classes (white/black) to show where they live in memory.
+    - **Concatenation:** You can mix Strings and numbers in a print statement easily (`"Age: " + age`).
+    - **Formatting:** Using `System.out.print` (no 'ln') keeps the user's input cursor on the same line as the question.
+
+- **💻 Code Snippet:**
+  ```java
+  import java.util.Scanner;
+
+  public class Main {
+      public static void main(String[] args) {
+          // 1. Reference Variable (Stored in Heap)
+          // String starts with Capital 'S' because it is a Class
+          String name = "Mosh of West Africa";
+          System.out.println(name);
+
+          // 2. Scanner Object for User Input
+          Scanner scanner = new Scanner(System.in);
+
+          // Taking String Input
+          System.out.print("Enter your name: "); // print keeps cursor on same line
+          String my_name = scanner.nextLine();   // nextLine() takes multiple words
+
+          // Taking Integer Input
+          System.out.print("How old are you? ");
+          int my_age = scanner.nextInt();
+
+          // Outputting the Logic
+          System.out.println("My name is " + my_name);
+          System.out.println("I am " + my_age + " years old");
+
+          // Always close the scanner!
+          scanner.close();
       }
   }

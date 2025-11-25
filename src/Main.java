@@ -30,7 +30,7 @@ public class Main{
         boolean isStudent = true;
 
         System.out.println("It is " + isStudent + " that he is a student");
-
+        // day 2
         /*
         Reference Variables
         1. Strings
