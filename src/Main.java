@@ -12,7 +12,7 @@ public class Main{
         System.out.println("My name is Mortoti");
         System.out.println("My dream is to become the Mosh Hamedani of West Africa");
        // Creating Variables
-
+        //Primitive Variables
         // Integer Variables
         int age = 19;
         System.out.println("age: " + age);
@@ -29,6 +29,16 @@ public class Main{
         boolean isStudent = true;
 
         System.out.println("It is " + isStudent + " that he is a student");
+
+        /*
+        Reference Variables
+        1. Strings
+        2. Arrays
+        3. Objects
+         */
+        //Strings
+        String name = "Mosh of West Africa"; // unlike the other data types so far, S is capital
+        System.out.println(name);
 
     }
 
