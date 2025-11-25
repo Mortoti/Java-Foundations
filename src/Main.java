@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class Main{
     public static void main(String[] args){
         // My first JAVA Program
@@ -40,6 +41,15 @@ public class Main{
         String name = "Mosh of West Africa"; // unlike the other data types so far, S is capital
         System.out.println(name);
 
+
+        // Creating a Scanner Object
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter your name: ");
+        String my_name;
+        my_name = scanner.nextLine(); // takes multiple words
+        // next takes only one word
+        System.out.println("My name is " + my_name);
+        scanner.close();
     }
 
 
