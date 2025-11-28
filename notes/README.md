@@ -200,3 +200,52 @@
   String mum_name = scanner.nextLine(); // Now this waits for input correctly
   
   System.out.println("Your mum, " + mum_name + " is " + mum_age + " years old");
+
+
+**Topic:** Challenge One
+
+- **1. The Challenge**
+    - Create a program that asks the user for the `length` and `width` of a rectangle, calculates the `area`, and prints the result.
+
+- **2. The "Senior Dev" Standard (Naming Conventions)**
+    - **The Rule:** Class names in Java must always use **PascalCase** (Capitalize every word).
+    - **The Mistake:** Using snake_case (e.g., `area_of_rectangle`) is a "Python accent." It works, but it breaks Java style guides.
+    - **The Fix:** Changed `area_of_rectangle` → **`AreaOfRectangle`**.
+
+- **3. Logic Flow**
+    - **Step 1:** Declare variables (`double` is better than `int` for measurements).
+    - **Step 2:** Initialize `Scanner`.
+    - **Step 3:** Prompt & Capture inputs (`scanner.nextDouble()`).
+    - **Step 4:** Logic `area = length * width`.
+    - **Step 5:** Clean Output (Concatenation).
+
+- **💻 Code Snippet (Solution):**
+  ```java
+  import java.util.Scanner;
+
+  public class AreaOfRectangle {
+      public static void main(String[] args) {
+          // 1. Variable Declaration
+          double length;
+          double width;
+          double area;
+
+          Scanner scanner = new Scanner(System.in);
+
+          // 2. Taking Inputs
+          System.out.print("Enter the length of the rectangle: ");
+          length = scanner.nextDouble();
+
+          System.out.print("Enter the width of the rectangle: ");
+          width = scanner.nextDouble();
+
+          // 3. The Logic
+          area = (length * width);
+
+          // 4. Output
+          System.out.println("The area of a rectangle with a width of: " + width + 
+                             " and a length of " + length + " is: " + area + ".");
+          
+          scanner.close();
+      }
+  }
