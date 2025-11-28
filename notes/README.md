@@ -175,3 +175,28 @@
           scanner.close();
       }
   }
+
+**Topic:** The `nextInt()` & `nextLine()` Trap
+
+- **1. The Problem (Ghost Input)**
+    - **Scenario:** You take a number input (`nextInt()`) followed immediately by a String input (`nextLine()`).
+    - **The Bug:** The program lets you type the number, but then **skips** the String input entirely.
+    - **The Cause:**
+        - `nextInt()` reads the number (e.g., "45") but leaves the **Enter key** (`\n`) in the buffer.
+        - The next `nextLine()` sees that waiting `\n`, assumes you hit Enter for the name, and consumes it immediately (reading an empty string).
+
+- **2. The Solution**
+    - **The Fix:** You must add an extra `scanner.nextLine()` immediately after the numeric input to "consume" the leftover newline character.
+
+- **💻 Code Snippet (The Fix):**
+  ```java
+  System.out.print("Enter your mom's age: ");
+  int mum_age = scanner.nextInt();
+  
+  // ⚠️ CRITICAL FIX: Consume the leftover newline
+  scanner.nextLine(); 
+  
+  System.out.print("Enter her name: ");
+  String mum_name = scanner.nextLine(); // Now this waits for input correctly
+  
+  System.out.println("Your mum, " + mum_name + " is " + mum_age + " years old");

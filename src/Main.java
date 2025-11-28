@@ -68,12 +68,20 @@ public class Main{
         double score = scanner.nextDouble();
         System.out.println(score);
 
-         */
+
 
         System.out.print("Are you a student? (true/false): ");
         boolean isStudent = scanner.nextBoolean();
         System.out.println("It is " + isStudent + " that you are a student");
         scanner.close();
+        */
+        //taking input after nextInt
+        System.out.print("Enter your mom's age: ");
+        int mum_age = scanner.nextInt();
+        scanner.nextLine(); // use this to prevent the error
+        System.out.print("Enter her name: ");
+        String mum_name = scanner.nextLine();
+        System.out.println("Your mum, " + mum_name + " is " + mum_age + " years old");
 
     }
 
