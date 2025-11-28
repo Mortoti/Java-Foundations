@@ -115,3 +115,35 @@
   
   System.out.println("your_name= "+ your_name + " and sec_name= " + sec_name);
   scanner.close();
+
+
+**Topic:** Numeric Input & Type Safety
+
+- **1. Strictness of `nextInt()` vs `nextDouble()`**
+    - **The Rule:** In Java, input methods are strictly typed.
+        - `scanner.nextInt()`: Accepts **only** integer values.
+        - `scanner.nextDouble()`: Accepts decimal values.
+    - **The "Crash" Scenario:**
+        - If you ask for an integer (`nextInt()`) and the user types a decimal (e.g., `5.9`), the program will **crash** with an `InputMismatchException`.
+        - **Contrast with Python:** Python's `int()` function often truncates a float (turning `5.9` into `5`) or throws a clear value error. Java is less forgiving during the scanning phase—it simply refuses to read the token if the type doesn't match perfectly.
+
+- **💻 Code Snippet (Type Safety Test):**
+  ```java
+  import java.util.Scanner;
+
+  public class Main {
+      public static void main(String[] args) {
+          Scanner scanner = new Scanner(System.in);
+
+          System.out.print("Enter a whole number (int): ");
+          // ⚠️ EXPERIMENT: Try entering 5.9 here.
+          // Result: The program crashes immediately (InputMismatchException).
+          // Java does NOT auto-convert or round down like Python might.
+          int number = scanner.nextInt(); 
+
+          System.out.println("You entered: " + number);
+          
+          scanner.close();
+      }
+  }
+  
