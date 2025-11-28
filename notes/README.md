@@ -146,4 +146,32 @@
           scanner.close();
       }
   }
-  
+
+**Topic:** Boolean Input & Case Flexibility
+
+- **1. The `nextBoolean()` Flexibility**
+    - **The Rule:** `scanner.nextBoolean()` is used to read `true` or `false` values.
+    - **The Flexibility:** Unlike variable names (which are strictly case-sensitive), the **Input** for booleans is **Case-Insensitive**.
+        - Typing `true`, `True`, `TRUE`, or even `tRuE` are all accepted as the boolean value `true`.
+        - Typing `false`, `False`, `FALSE` are all accepted as `false`.
+    - **The Limit:** It *must* be the word "true" or "false".
+        - Typing "yes", "no", "T", or "1" will cause an `InputMismatchException` crash.
+
+- **💻 Code Snippet (Boolean Test):**
+  ```java
+  import java.util.Scanner;
+
+  public class Main {
+      public static void main(String[] args) {
+          Scanner scanner = new Scanner(System.in);
+
+          System.out.print("Are you a student? (true/false): ");
+          // EXPERIMENT: Try typing "TRUE" or "True".
+          // Result: It works! Java converts it to the boolean 'true'.
+          boolean isStudent = scanner.nextBoolean();
+
+          System.out.println("It is " + isStudent + " that you are a student");
+          
+          scanner.close();
+      }
+  }

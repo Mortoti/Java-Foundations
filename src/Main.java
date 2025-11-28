@@ -27,9 +27,9 @@ public class Main{
         System.out.println("I had grade " + grade + " in the exams");
 
         // Boolean Variables
-        boolean isStudent = true;
+        //boolean isStudent = true;
 
-        System.out.println("It is " + isStudent + " that he is a student");
+        //System.out.println("It is " + isStudent + " that he is a student");
         // day 2
         /*
         Reference Variables
@@ -44,6 +44,7 @@ public class Main{
 
         // Creating a Scanner Object
         Scanner scanner = new Scanner(System.in);
+        /*
         System.out.println("Enter your name: ");
         String my_name;
         my_name = scanner.nextLine(); // takes multiple words
@@ -57,10 +58,21 @@ public class Main{
         System.out.println("I am " + my_age + " years old");
 
         //Testing
+
         System.out.print("Enter your full name: ");
         String your_name = scanner.next();
         String sec_name = scanner.next();
         System.out.println("your_name= "+ your_name + " and sec_name= " + sec_name);
+
+        System.out.print("Enter your score: ");
+        double score = scanner.nextDouble();
+        System.out.println(score);
+
+         */
+
+        System.out.print("Are you a student? (true/false): ");
+        boolean isStudent = scanner.nextBoolean();
+        System.out.println("It is " + isStudent + " that you are a student");
         scanner.close();
 
     }
