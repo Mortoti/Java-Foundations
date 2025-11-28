@@ -55,7 +55,14 @@ public class Main{
 
         System.out.println("My name is " + my_name);
         System.out.println("I am " + my_age + " years old");
+
+        //Testing
+        System.out.print("Enter your full name: ");
+        String your_name = scanner.next();
+        String sec_name = scanner.next();
+        System.out.println("your_name= "+ your_name + " and sec_name= " + sec_name);
         scanner.close();
+
     }
 
 

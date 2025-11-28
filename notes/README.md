@@ -93,3 +93,25 @@
           scanner.close();
       }
   }
+
+### [Day 03] - Nov 28, 2025
+**Topic:** Scanner Input & Buffer Behavior (Scientific Test)
+
+- **1. The Scanner "Token" Insight**
+    - **The Experiment:** Running `scanner.next()` twice consecutively while providing a two-word input (e.g., "Jephthah Mortoti").
+    - **The Observation:**
+        - The first `scanner.next()` consumed "Jephthah" and stopped at the space.
+        - The second `scanner.next()` **did not ask for new input**. It immediately consumed "Mortoti" which was waiting in the buffer.
+    - **Conclusion:** `next()` reads one "token" (word) at a time. It does not read the whole line. The remaining words stay in the memory buffer until another Scanner method calls for them.
+
+- **💻 Code Snippet (Buffer Proof):**
+  ```java
+  // Testing Scanner Buffer Behavior
+  System.out.print("Enter your full name: ");
+  // Input provided: "Jephthah Mortoti"
+  
+  String your_name = scanner.next(); // Reads "Jephthah"
+  String sec_name = scanner.next();  // Automatically reads "Mortoti" from buffer
+  
+  System.out.println("your_name= "+ your_name + " and sec_name= " + sec_name);
+  scanner.close();
